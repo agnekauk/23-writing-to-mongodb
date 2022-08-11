@@ -42,8 +42,10 @@ const getData = () => {
 
                 html += `<li data-id='${value._id}'>
                 <a class='info'><span class='new-content'>${value.content}</span> Publishing date:  ${date}</a>
-                <a class='btn btn-outline-secondary edit'>Edit</a>
-                <a class='btn btn-outline-secondary delete'>Delete</a>
+                <div class='btn-container'>
+                <a class='button btn-outline-secondary edit'>Edit</a>
+                <a class='button btn-outline-secondary delete'>Delete</a>
+                </div>
                 </li>`
             })
             html += '</ul>'
@@ -92,7 +94,7 @@ addNewToDo.addEventListener('click', () => {
     if (content === '') {
         let messages = document.querySelector('.messages');
         messages.innerHTML = 'Add a text and date';
-        messages.classList.add('show');
+        messages.classList.add('show', 'alert-warning');
         return
     }
 
@@ -111,6 +113,6 @@ addNewToDo.addEventListener('click', () => {
             document.querySelector('#new-text').value = '';
             addNewToDo.setAttribute('data-mode', 'add');
             addNewToDo.textContent = addNewToDo.getAttribute('data-add-label');
-            messages("Information added to database");
+            messages("Information added to database", "success");
         })
 })

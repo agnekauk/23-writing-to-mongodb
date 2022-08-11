@@ -9,13 +9,33 @@ body {
     border-radius: 10px;
     color: #023430;
     max-width: 600px;
-    margin-top: 80px;
+    margin-top: 50px;
     padding: 40px;
 }
 
-.btn {
+.btn-add {
     background-color: #116149;
     color: #fff;
+    border-radius: 4px;
+    border: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.add-input-group {
+    display: flex;
+}
+
+input[type='text'] {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+input[type= 'date'] {
+    width: 160px;
+    border-radius: 0px;
+    border: solid 1px;
+    font-size: 12px;
 }
 
 .messages {
@@ -32,6 +52,7 @@ li {
     display: flex;
     align-items: center;
     gap: 10px;
+    justify-content: space-between;
 }
 
 li:first-child {
@@ -39,29 +60,74 @@ li:first-child {
 }
 
 .info {
-    flex-grow: 3;
     text-decoration: none;
     color:#023430;
-}
-
-input[type='checkbox'] {
-    height: 18px;
-    width: 18px;
-}
-
-.delete-todo {
-    background-color: #6c757d;
-    color: #fff;
-}
-
-.delete-todo:hover {
-    background-color: #116149;
-    color: #fff;
+    width: 70%;
 }
 
 ul {
     margin-top: 60px;
     padding-left: 0;
+}
+.new-content {
+    display: flex;
+    flex-direction: column;
+}
+.btn-container {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    gap:5px;
+}
+.button {
+    width: 75px;
+    border: solid 1px;
+    border-radius: 4px;
+    padding: 7px;
+    text-decoration: none;
+    text-align: center;
+}
+.edit {
+    background-color: #d3bb4f;
+    color: #fff;
+}
+.delete {
+    background-color: #dc143c;
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .add-new > .add-input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+    input[type='date']{
+        height: 30px;
+        border-radius: 2px;
+    }
+    input[type='text'] {
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .btn-add {
+        width: 100%;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    li {
+        flex-direction: column;
+    }
+    .info {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+    .btn-container{
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 
