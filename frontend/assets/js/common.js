@@ -37,8 +37,11 @@ const getData = () => {
             html = '<ul>'
 
             resp.data.forEach(value => {
+                let rawDate = new Date(value.data);
+                let date = rawDate.getUTCFullYear() + "/" + rawDate.getUTCMonth() + "/" + rawDate.getUTCDay() + "/";
+
                 html += `<li data-id='${value._id}'>
-                <a class='info'><span class='new-content'>${value.content}</span> ${value.data}</a>
+                <a class='info'><span class='new-content'>${value.content}</span> Publishing date:  ${date}</a>
                 <a class='btn btn-outline-secondary edit'>Edit</a>
                 <a class='btn btn-outline-secondary delete'>Delete</a>
                 </li>`
